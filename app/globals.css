@@ -223,3 +223,58 @@ body {
   z-index: 1;
   transition: opacity 0.3s;
 }
+
+/* Light theme overrides (dark remains default) */
+html.light body {
+  background: #f4f7fb;
+  color: #0f172a;
+}
+
+html.light ::-webkit-scrollbar-track { background: #eef2f7; }
+html.light ::selection { background: rgba(168,85,247,0.2); color: #0f172a; }
+
+html.light .bg-dark { background-color: #f4f7fb !important; }
+html.light .bg-dark-2 { background-color: #eef2f7 !important; }
+html.light .bg-dark-3 { background-color: #e5eaf2 !important; }
+html.light .bg-dark\/80 { background-color: rgba(244, 247, 251, 0.9) !important; }
+
+html.light .text-white { color: #0f172a !important; }
+html.light .text-white\/90 { color: #1e293b !important; }
+html.light .text-white\/80 { color: #334155 !important; }
+html.light .text-white\/70 { color: #475569 !important; }
+html.light .text-white\/60 { color: #64748b !important; }
+html.light .text-white\/50 { color: #64748b !important; }
+html.light .text-white\/40 { color: #94a3b8 !important; }
+html.light .text-white\/30 { color: #94a3b8 !important; }
+
+html.light .border-white\/5 { border-color: rgba(15, 23, 42, 0.08) !important; }
+html.light .border-white\/8 { border-color: rgba(15, 23, 42, 0.1) !important; }
+html.light .border-white\/10 { border-color: rgba(15, 23, 42, 0.12) !important; }
+html.light .border-white\/20 { border-color: rgba(15, 23, 42, 0.16) !important; }
+
+html.light .bg-white\/5 { background-color: rgba(15, 23, 42, 0.04) !important; }
+html.light .bg-white\/8 { background-color: rgba(15, 23, 42, 0.06) !important; }
+html.light .bg-white\/10 { background-color: rgba(15, 23, 42, 0.08) !important; }
+
+html.light .glass {
+  background: rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+html.light .glass-strong {
+  background: rgba(168, 85, 247, 0.08);
+  border: 1px solid rgba(168, 85, 247, 0.22);
+}
+
+html.light .nav-blur {
+  backdrop-filter: blur(20px) saturate(150%);
+  -webkit-backdrop-filter: blur(20px) saturate(150%);
+}
+
+html.light .modal-overlay {
+  background: rgba(15, 23, 42, 0.35);
+}
+
+html.light .cursor-glow {
+  background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%);
+}

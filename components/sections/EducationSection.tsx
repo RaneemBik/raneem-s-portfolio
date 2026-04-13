@@ -98,7 +98,7 @@ export default function EducationSection() {
             </p>
             <div className="flex flex-wrap gap-4 justify-center">
               <motion.a
-                href="/Raneem_Bikai_CV.pdf"
+                href="/Raneem_Bikai_CV.docx"
                 download
                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all"
                 whileHover={{ scale: 1.05 }}
@@ -108,6 +108,7 @@ export default function EducationSection() {
                 Download CV
               </motion.a>
               <motion.button
+                type="button"
                 onClick={() => {
                   const modal = document.getElementById("cv-viewer-modal");
                   if (modal) modal.style.display = "flex";

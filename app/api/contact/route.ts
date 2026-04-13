@@ -8,16 +8,7 @@ export async function POST(req: NextRequest) {
       return NextResponse.json({ error: "All fields are required" }, { status: 400 });
     }
 
-    // Create mailto link data - this opens the user's email client
-    // For actual email sending, configure with your SMTP or use a service like Resend/SendGrid
-    // Add your SMTP credentials in .env.local:
-    // EMAIL_USER=raneembikai70@gmail.com
-    // EMAIL_PASS=your-app-password
-
-    // Simple approach: log and return success
-    // To enable real email: npm install nodemailer and uncomment below
-    
-    /*
+    // Send email using nodemailer
     const nodemailer = require('nodemailer');
     const transporter = nodemailer.createTransport({
       service: 'gmail',
@@ -28,8 +19,8 @@ export async function POST(req: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: email,
-      to: 'raneembikai70@gmail.com',
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER,
       subject: `Portfolio Contact from ${name}`,
       html: `
         <h2>New message from your portfolio</h2>
@@ -39,7 +30,6 @@ export async function POST(req: NextRequest) {
         <p>${message}</p>
       `,
     });
-    */
 
     console.log("Contact form submission:", { name, email, message });
 

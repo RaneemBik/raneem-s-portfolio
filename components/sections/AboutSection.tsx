@@ -1,5 +1,5 @@
 "use client";
-import { useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
 import { MapPin, GraduationCap, Briefcase, Code2, Download, ExternalLink } from "lucide-react";
 import { personalInfo } from "@/data";
@@ -15,6 +15,13 @@ const stats = [
 export default function AboutSection() {
   const ref = useRef(null);
   const inView = useInView(ref, { once: true, margin: "-100px" });
+  const [cvViewerSrc, setCvViewerSrc] = useState("");
+
+  useEffect(() => {
+    const docxUrl = `${window.location.origin}/Raneem_Bikai_CV.docx`;
+    const officeViewer = `https://view.officeapps.live.com/op/embed.aspx?src=${encodeURIComponent(docxUrl)}`;
+    setCvViewerSrc(officeViewer);
+  }, []);
 
   return (
     <section id="about" className="section-padding relative overflow-hidden bg-dark-2">
@@ -154,7 +161,7 @@ export default function AboutSection() {
             {/* CV buttons */}
             <div className="flex flex-wrap gap-3">
               <motion.a
-                href="/Raneem_Bikai_CV.pdf"
+                href="/Raneem_Bikai_CV.docx"
                 download
                 className="flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm shadow-lg shadow-purple-500/20 hover:shadow-purple-500/40 transition-all"
                 whileHover={{ scale: 1.05 }}
@@ -164,6 +171,7 @@ export default function AboutSection() {
                 Download CV
               </motion.a>
               <motion.button
+                type="button"
                 onClick={() => {
                   const modal = document.getElementById("cv-viewer-modal");
                   if (modal) modal.style.display = "flex";
@@ -219,7 +227,7 @@ export default function AboutSection() {
             <h3 className="font-semibold text-white">Raneem Bikai — CV</h3>
             <div className="flex gap-3">
               <a
-                href="/Raneem_Bikai_CV.pdf"
+                href="/Raneem_Bikai_CV.docx"
                 download
                 className="flex items-center gap-2 px-4 py-2 rounded-full bg-purple-500/20 border border-purple-500/30 text-purple-300 text-sm"
               >
@@ -237,11 +245,17 @@ export default function AboutSection() {
             </div>
           </div>
           <div className="flex-1 overflow-hidden">
-            <iframe
-              src="/Raneem_Bikai_CV.pdf"
-              className="w-full h-full"
-              title="Raneem Bikai CV"
-            />
+            {cvViewerSrc ? (
+              <iframe
+                src={cvViewerSrc}
+                className="w-full h-full"
+                title="Raneem Bikai CV"
+              />
+            ) : (
+              <div className="w-full h-full flex items-center justify-center text-white/60 text-sm px-6 text-center">
+                Preparing CV viewer...
+              </div>
+            )}
           </div>
         </div>
       </div>

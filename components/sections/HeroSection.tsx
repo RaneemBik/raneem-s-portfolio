@@ -156,7 +156,7 @@ export default function HeroSection() {
                 View Projects
               </motion.button>
               <motion.a
-                href="/Raneem_Bikai_CV.pdf"
+                href="/Raneem_Bikai_CV.docx"
                 download
                 className="flex items-center gap-2 px-8 py-3.5 rounded-full glass border border-white/10 text-white/80 font-semibold text-sm hover:border-purple-500/30 hover:text-white transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
