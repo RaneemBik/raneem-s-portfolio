@@ -15,7 +15,7 @@ const TechSphere = dynamic(() => import("@/components/3d/TechSphere"), {
 });
 
 const titles = [
-  "ll-Stack Developer",
+  "Full-Stack Developer",
   "QA Engineer",
   "React Specialist",
   "Next.js Engineer",
