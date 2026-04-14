@@ -72,11 +72,11 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0.9, y: 40 }}
           transition={{ type: "spring", damping: 25, stiffness: 300 }}
-          className="w-full max-w-3xl max-h-[90vh] overflow-y-auto glass rounded-2xl border border-white/10"
+          className="w-full max-w-3xl max-h-[90vh] overflow-y-auto bg-dark-3/95 rounded-2xl border border-white/10 backdrop-blur-xl"
           onClick={(e) => e.stopPropagation()}
         >
           {/* Header */}
-          <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 glass border-b border-white/5">
+          <div className="sticky top-0 z-10 flex items-center justify-between px-6 py-4 bg-dark-3/90 backdrop-blur-xl border-b border-white/5">
             <div>
               <h2 className="text-xl font-bold text-white">{project.title}</h2>
               <p className="text-white/40 text-sm">{project.subtitle}</p>
