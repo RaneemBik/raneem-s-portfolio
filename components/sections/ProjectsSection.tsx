@@ -24,6 +24,8 @@ interface ProjectCardProps {
 }
 
 function ProjectCard({ project, onClick, index, inView }: ProjectCardProps) {
+  const hasImages = project.images && project.images.length > 0 && project.images[0];
+  
   return (
     <motion.div
       initial={{ opacity: 0, y: 40 }}
@@ -33,7 +35,7 @@ function ProjectCard({ project, onClick, index, inView }: ProjectCardProps) {
       className="group relative glass rounded-2xl border border-white/5 overflow-hidden cursor-pointer hover:border-purple-500/30 transition-all duration-300"
       onClick={onClick}
     >
-      {/* Project image */}
+      {/* Project image or code icon */}
       <div className="relative h-44 overflow-hidden">
         <div
           className="absolute inset-0"
@@ -43,12 +45,32 @@ function ProjectCard({ project, onClick, index, inView }: ProjectCardProps) {
             } 0%, #0a0a0f 100%)`,
           }}
         >
-          <img
-            src={project.images[0]}
-            alt={project.title}
-            className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
-            onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
-          />
+          {hasImages ? (
+            <img
+              src={project.images[0]}
+              alt={project.title}
+              className="w-full h-full object-cover opacity-70 group-hover:opacity-90 transition-opacity"
+              onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
+            />
+          ) : (
+            <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+              <div className="text-5xl font-bold text-white/30 group-hover:text-white/50 transition-colors">
+                &lt;/&gt;
+              </div>
+              <div className="flex flex-wrap gap-2 justify-center px-4">
+                {project.technologies.slice(0, 3).map((tech) => (
+                  <span key={tech} className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-white/60 text-xs">
+                    {tech}
+                  </span>
+                ))}
+                {project.technologies.length > 3 && (
+                  <span className="px-2 py-1 rounded-md bg-white/5 border border-white/10 text-white/40 text-xs">
+                    +{project.technologies.length - 3}
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Overlay on hover */}
@@ -161,7 +183,7 @@ export default function ProjectsSection() {
     return catOk && yearOk && techOk;
   });
 
-  const displayed = showAll ? filtered : filtered.slice(0, 6);
+  const displayed = showAll ? filtered : filtered.slice(0, 3);
 
   return (
     <section id="projects" className="section-padding relative overflow-hidden bg-dark">
@@ -304,7 +326,7 @@ export default function ProjectsSection() {
         </div>
 
         {/* Show more */}
-        {filtered.length > 6 && (
+        {filtered.length > 3 && (
           <motion.div
             initial={{ opacity: 0 }}
             animate={inView ? { opacity: 1 } : {}}
@@ -316,7 +338,7 @@ export default function ProjectsSection() {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              {showAll ? "Show Less" : `Show More (${filtered.length - 6} more)`}
+              {showAll ? "Show Less" : `Show More (${filtered.length - 3} more)`}
               <ChevronDown size={16} className={`transition-transform ${showAll ? "rotate-180" : ""}`} />
             </motion.button>
           </motion.div>

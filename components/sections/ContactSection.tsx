@@ -88,7 +88,7 @@ export default function ContactSection() {
         <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-pink-500/5 rounded-full blur-3xl" />
       </div>
 
-      <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-6">
+      <div ref={ref} className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -105,7 +105,7 @@ export default function ContactSection() {
           </p>
         </motion.div>
 
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Left — Form + Info */}
           <div className="space-y-8">
             {/* Contact cards */}
@@ -225,7 +225,7 @@ export default function ContactSection() {
             initial={{ opacity: 0, x: 40 }}
             animate={inView ? { opacity: 1, x: 0 } : {}}
             transition={{ delay: 0.3 }}
-            className="relative h-[480px] lg:h-[560px]"
+            className="relative h-[320px] sm:h-[380px] md:h-[460px] lg:h-[560px]"
           >
             {/* Globe container */}
             <div className="w-full h-full">
@@ -233,8 +233,8 @@ export default function ContactSection() {
             </div>
 
             {/* Overlay text */}
-            <div className="absolute inset-x-0 bottom-6 flex flex-col items-center pointer-events-none">
-              <div className="glass border border-purple-500/20 rounded-xl px-5 py-3 text-center">
+            <div className="absolute inset-x-0 bottom-3 sm:bottom-6 flex flex-col items-center pointer-events-none px-3">
+              <div className="glass border border-purple-500/20 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-center max-w-[90%]">
                 <p className="text-white/60 text-sm">Based in</p>
                 <p className="text-white font-semibold">Lebanon 🇱🇧</p>
                 <p className="text-white/40 text-xs mt-0.5">Available worldwide 🌍</p>

@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Line } from "@react-three/drei";
 import * as THREE from "three";
@@ -175,9 +175,22 @@ function Particles() {
 }
 
 export default function GlobeScene() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
   return (
     <div className="w-full h-full">
-      <Canvas camera={{ position: [0, 0, 4.5], fov: 45 }} dpr={[1, 2]}>
+      <Canvas
+        camera={{ position: [0, 0, isMobile ? 5.2 : 4.5], fov: isMobile ? 52 : 45 }}
+        dpr={isMobile ? [1, 1.5] : [1, 2]}
+        gl={{ antialias: true, powerPreference: "high-performance" }}
+      >
         <ambientLight intensity={0.2} />
         <pointLight position={[5, 3, 5]} intensity={1.5} color="#a855f7" />
         <pointLight position={[-5, -3, -5]} intensity={0.8} color="#ec4899" />

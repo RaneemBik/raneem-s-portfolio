@@ -85,8 +85,8 @@ export default function HeroSection() {
         />
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 w-full pt-24">
-        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[calc(100vh-6rem)]">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 w-full pt-20 md:pt-24">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 items-center min-h-[calc(100vh-6rem)]">
           {/* Left content */}
           <motion.div
             initial={{ opacity: 0, x: -60 }}
@@ -110,7 +110,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-5xl md:text-7xl font-bold mb-4 leading-tight"
+              className="text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-bold mb-3 md:mb-4 leading-tight"
             >
               Hi, I&apos;m{" "}
               <span className="gradient-text">Raneem</span>
@@ -123,7 +123,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-2xl md:text-3xl font-semibold text-white/70 mb-6 h-10"
+              className="text-lg sm:text-xl md:text-2xl lg:text-3xl font-semibold text-white/70 mb-4 md:mb-6 h-8 md:h-10"
             >
               <TypewriterText />
             </motion.div>
@@ -133,7 +133,7 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.5 }}
-              className="text-white/50 text-lg leading-relaxed mb-8 max-w-lg"
+              className="text-white/50 text-base sm:text-lg md:text-lg leading-relaxed mb-6 md:mb-8 max-w-lg"
             >
               Crafting scalable, beautiful web experiences with React, Next.js &
               Node.js. Passionate about clean code, AI integration, and building
@@ -145,11 +145,11 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.6 }}
-              className="flex flex-wrap gap-4 mb-10"
+              className="flex flex-wrap gap-3 md:gap-4 mb-8 md:mb-10"
             >
               <motion.button
                 onClick={() => document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" })}
-                className="px-8 py-3.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all"
+                className="px-6 md:px-8 py-2.5 md:py-3.5 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold text-sm shadow-lg shadow-purple-500/25 hover:shadow-purple-500/50 transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -158,12 +158,13 @@ export default function HeroSection() {
               <motion.a
                 href="/Raneem_Bikai_CV.docx"
                 download
-                className="flex items-center gap-2 px-8 py-3.5 rounded-full glass border border-white/10 text-white/80 font-semibold text-sm hover:border-purple-500/30 hover:text-white transition-all"
+                className="flex items-center gap-2 px-6 md:px-8 py-2.5 md:py-3.5 rounded-full glass border border-white/10 text-white/80 font-semibold text-sm hover:border-purple-500/30 hover:text-white transition-all"
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
                 <Download size={16} />
-                Download CV
+                <span className="hidden sm:inline">Download CV</span>
+                <span className="sm:hidden">CV</span>
               </motion.a>
             </motion.div>
 
@@ -172,9 +173,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.7 }}
-              className="flex items-center gap-4"
+              className="flex items-center gap-3 md:gap-4"
             >
-              <span className="text-white/30 text-sm">Connect:</span>
+              <span className="text-white/30 text-xs md:text-sm">Connect:</span>
               {[
                 { icon: Github, href: personalInfo.github, label: "GitHub" },
                 { icon: Linkedin, href: personalInfo.linkedin, label: "LinkedIn" },
@@ -201,7 +202,7 @@ export default function HeroSection() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.3 }}
-            className="relative h-[500px] lg:h-[620px]"
+            className="relative w-full h-64 sm:h-72 md:h-96 lg:h-[550px] mt-8 lg:mt-0"
           >
             <TechSphere />
 
@@ -210,9 +211,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: 40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1 }}
-              className="absolute top-10 right-0 glass border border-purple-500/20 rounded-xl px-4 py-3 text-center"
+              className="absolute top-4 right-0 glass border border-purple-500/20 rounded-xl px-3 py-2 md:px-4 md:py-3 text-center text-xs md:text-sm"
             >
-              <div className="text-2xl font-bold gradient-text">10+</div>
+              <div className="text-xl md:text-2xl font-bold gradient-text">10+</div>
               <div className="text-xs text-white/50">Projects</div>
             </motion.div>
 
@@ -220,9 +221,9 @@ export default function HeroSection() {
               initial={{ opacity: 0, x: -40 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: 1.2 }}
-              className="absolute bottom-20 left-0 glass border border-pink-500/20 rounded-xl px-4 py-3 text-center"
+              className="absolute bottom-4 md:bottom-20 left-0 glass border border-pink-500/20 rounded-xl px-3 py-2 md:px-4 md:py-3 text-center text-xs md:text-sm"
             >
-              <div className="text-2xl font-bold gradient-text-2">20+</div>
+              <div className="text-xl md:text-2xl font-bold gradient-text-2">20+</div>
               <div className="text-xs text-white/50">Technologies</div>
             </motion.div>
           </motion.div>

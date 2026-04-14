@@ -1,5 +1,5 @@
 "use client";
-import { useRef, useMemo } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Html, Float, MeshDistortMaterial } from "@react-three/drei";
 import * as THREE from "three";
@@ -88,7 +88,7 @@ function OrbitingTech() {
     return techItems.map((_, i) => {
       const phi = Math.acos(-1 + (2 * i) / techItems.length);
       const theta = Math.sqrt(techItems.length * Math.PI) * phi;
-      const radius = 2.8;
+      const radius = 2.2; // reduced from 2.8
       return [
         radius * Math.cos(theta) * Math.sin(phi),
         radius * Math.sin(theta) * Math.sin(phi),
@@ -152,18 +152,18 @@ function WireframeSphere() {
 
   return (
     <mesh ref={meshRef}>
-      <sphereGeometry args={[2.85, 32, 32]} />
+      <sphereGeometry args={[2.3, 32, 32]} />
       <meshBasicMaterial color="#a855f7" wireframe transparent opacity={0.05} />
     </mesh>
   );
 }
 
 function Particles() {
-  const count = 80;
+  const count = 60; // reduced from 80
   const positions = useMemo(() => {
     const pos = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
-      const r = 3.5 + Math.random() * 1.5;
+      const r = 2.8 + Math.random() * 1.2; // reduced from 3.5 + 1.5
       const theta = Math.random() * Math.PI * 2;
       const phi = Math.random() * Math.PI;
       pos[i * 3] = r * Math.sin(phi) * Math.cos(theta);
@@ -191,9 +191,18 @@ function Particles() {
 }
 
 export default function TechSphere() {
+  const [isMobile, setIsMobile] = useState(false);
+  
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 640);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+  
   return (
     <div className="w-full h-full">
-      <Canvas camera={{ position: [0, 0, 7], fov: 50 }} dpr={[1, 2]}>
+      <Canvas camera={{ position: [0, 0, isMobile ? 5.5 : 5.8], fov: isMobile ? 40 : 50 }} dpr={[1, 2]}>
         <ambientLight intensity={0.4} />
         <pointLight position={[5, 5, 5]} intensity={1} color="#a855f7" />
         <pointLight position={[-5, -5, -5]} intensity={0.5} color="#ec4899" />
