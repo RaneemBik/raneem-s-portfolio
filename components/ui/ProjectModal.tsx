@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Github, ExternalLink, Calendar, CheckCircle2, ChevronLeft, ChevronRight } from "lucide-react";
+import { X, Github, ExternalLink, Calendar, CheckCircle2, ChevronLeft, ChevronRight, Code2, SquareStack, Leaf, Waves } from "lucide-react";
 
 interface Project {
   id: number;
@@ -117,8 +117,8 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                       className="absolute inset-0 w-full h-full object-cover"
                       onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
                     />
-                    <span className="relative z-10 opacity-30">
-                      {["⚛️", "▲", "🔷", "🟢", "🐍", "🍃", "🦅", "🌊"][project.id % 8]}
+                    <span className="relative z-10 opacity-30 flex items-center justify-center">
+                      {[<Code2 key="0" size={48} />, <Code2 key="1" size={48} />, <Code2 key="2" size={48} />, <Code2 key="3" size={48} />, <Code2 key="4" size={48} />, <Leaf key="5" size={48} />, <Code2 key="6" size={48} />, <Waves key="7" size={48} />][project.id % 8]}
                     </span>
                   </div>
                 </motion.div>

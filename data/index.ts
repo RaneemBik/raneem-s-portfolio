@@ -25,15 +25,8 @@ export const skills = {
   Mobile: ["Flutter", "Dart", "Firebase"],
 };
 
-export const skillIcons: Record<string, string> = {
-  "HTML5": "⚡", "CSS3": "🎨", "JavaScript": "🟨", "TypeScript": "🔷",
-  "Python": "🐍", "SQL": "🗄️", "Java": "☕", "React": "⚛️",
-  "Next.js": "▲", "Tailwind CSS": "🌊", "Node.js": "🟢", "Express.js": "🚂",
-  "NestJS": "🦅", "FastAPI": "⚡", "Django": "🎸", "PHP": "🐘",
-  "MongoDB": "🍃", "PostgreSQL": "🐘", "MySQL": "🐬", "Supabase": "⚡",
-  "JWT": "🔑", "GitHub": "🐙", "Vercel": "▲", "Flutter": "💙",
-  "Firebase": "🔥", "Docker": "🐳", "Git": "🌿",
-};
+export const skillIcons: Record<string, string> = {};
+
 
 export const experience = [
   {
@@ -68,7 +61,7 @@ export const education = [
     period: "Graduated July 2025",
     year: "2025",
     description: "Bachelor's degree in Computer Science with focus on software engineering, web development, and database systems.",
-    icon: "🎓",
+    icon: "GraduationCap",
   },
 ];
 
@@ -134,7 +127,7 @@ export const projects = [
     live: "",
     date: "2026",
     category: "Full Stack",
-    images: ["/projects/ratehub/1.png"],
+    images: [],
     highlights: [
       "Job posting management for companies",
       "CV upload for candidates",
@@ -180,7 +173,7 @@ export const projects = [
     live: "",
     date: "2026",
     category: "Backend",
-    images: ["/projects/auth/1.png"],
+    images: [],
     highlights: [
       "JWT authentication with refresh tokens",
       "bcrypt password hashing",
@@ -204,7 +197,7 @@ export const projects = [
     live: "",
     date: "2024",
     category: "Full Stack",
-    images: ["/projects/rofof/1.png"],
+    images: [],
     highlights: [
       "Browse and search book catalog",
       "Advanced category filtering",
@@ -227,7 +220,7 @@ export const projects = [
     live: "",
     date: "2024",
     category: "Full Stack",
-    images: ["/projects/smartmind/1.png"],
+    images: [],
     highlights: [
       "Age-based interactive games",
       "AI-powered conversational features",
@@ -251,7 +244,7 @@ export const projects = [
     live: "",
     date: "2024",
     category: "Mobile",
-    images: ["/projects/recipe/1.png"],
+    images: [],
     highlights: [
       "Browse recipes by cuisine & culture",
       "Save and manage favorite recipes",
@@ -298,12 +291,12 @@ export const navLinks = [
 ];
 
 export const techStack3D = [
-  { name: "React", color: "#61DAFB", icon: "⚛️" },
-  { name: "Next.js", color: "#ffffff", icon: "▲" },
-  { name: "TypeScript", color: "#3178C6", icon: "TS" },
-  { name: "Node.js", color: "#539E43", icon: "⬡" },
-  { name: "Python", color: "#F7CD3E", icon: "🐍" },
-  { name: "MongoDB", color: "#47A248", icon: "🍃" },
-  { name: "PostgreSQL", color: "#336791", icon: "🐘" },
-  { name: "Tailwind", color: "#38BDF8", icon: "🌊" },
+  { name: "React", color: "#61DAFB", icon: "React" },
+  { name: "Next.js", color: "#ffffff", icon: "Code2" },
+  { name: "TypeScript", color: "#3178C6", icon: "Code2" },
+  { name: "Node.js", color: "#539E43", icon: "Server" },
+  { name: "Python", color: "#F7CD3E", icon: "Code2" },
+  { name: "MongoDB", color: "#47A248", icon: "Database" },
+  { name: "PostgreSQL", color: "#336791", icon: "Database" },
+  { name: "Tailwind", color: "#38BDF8", icon: "Palette" },
 ];

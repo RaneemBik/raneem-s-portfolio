@@ -236,8 +236,8 @@ export default function ContactSection() {
             <div className="absolute inset-x-0 bottom-3 sm:bottom-6 flex flex-col items-center pointer-events-none px-3">
               <div className="glass border border-purple-500/20 rounded-xl px-4 sm:px-5 py-2.5 sm:py-3 text-center max-w-[90%]">
                 <p className="text-white/60 text-sm">Based in</p>
-                <p className="text-white font-semibold">Lebanon 🇱🇧</p>
-                <p className="text-white/40 text-xs mt-0.5">Available worldwide 🌍</p>
+                <p className="text-white font-semibold">Lebanon</p>
+                <p className="text-white/40 text-xs mt-0.5">Available worldwide</p>
               </div>
             </div>
           </motion.div>

@@ -1,7 +1,7 @@
 "use client";
 import { useRef } from "react";
 import { motion, useInView } from "framer-motion";
-import { GraduationCap, Calendar, MapPin, Download, ExternalLink } from "lucide-react";
+import { GraduationCap, Calendar, MapPin, Download, ExternalLink, FileText } from "lucide-react";
 import { education } from "@/data";
 
 export default function EducationSection() {
@@ -44,8 +44,8 @@ export default function EducationSection() {
 
                 <div className="relative z-10 flex flex-col md:flex-row gap-6 items-start">
                   {/* Icon */}
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-purple-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0 text-3xl">
-                    {edu.icon}
+                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-amber-500/20 to-purple-500/20 border border-amber-500/30 flex items-center justify-center flex-shrink-0">
+                    <GraduationCap size={32} className="text-amber-400" />
                   </div>
 
                   {/* Info */}
@@ -89,8 +89,8 @@ export default function EducationSection() {
         >
           <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-pink-500/5" />
           <div className="relative z-10">
-            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center mx-auto mb-4 text-2xl">
-              📄
+            <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-500/20 to-pink-500/20 border border-purple-500/30 flex items-center justify-center mx-auto mb-4">
+              <FileText size={28} className="text-purple-300" />
             </div>
             <h3 className="text-2xl font-bold text-white mb-2">My Resume</h3>
             <p className="text-white/50 mb-6 max-w-md mx-auto">

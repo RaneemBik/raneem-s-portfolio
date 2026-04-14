@@ -43,7 +43,6 @@ function SkillTag({ name, delay, category }: { name: string; delay: number; cate
       onHoverEnd={() => setHovered(false)}
       className={`relative px-4 py-2.5 rounded-xl border text-sm font-medium cursor-default transition-all duration-200 flex items-center gap-2 ${categoryBg[category] || "bg-white/5 border-white/10"}`}
     >
-      {icon && <span className="text-base">{icon}</span>}
       <span className="text-white/80">{name}</span>
     </motion.div>
   );
@@ -155,7 +154,7 @@ export default function SkillsSection() {
         >
           <p className="text-center text-white/30 text-sm mb-4 uppercase tracking-widest">Core Stack</p>
           <div className="flex flex-wrap justify-center gap-6">
-            {["⚛️ React", "▲ Next.js", "🔷 TypeScript", "🟢 Node.js", "🦅 NestJS", "🐍 Python", "⚡ FastAPI", "🍃 MongoDB", "🌊 Tailwind"].map((tech) => (
+            {["React", "Next.js", "TypeScript", "Node.js", "NestJS", "Python", "FastAPI", "MongoDB", "Tailwind"].map((tech) => (
               <motion.span
                 key={tech}
                 className="text-white/50 text-sm font-medium hover:text-white transition-colors cursor-default"

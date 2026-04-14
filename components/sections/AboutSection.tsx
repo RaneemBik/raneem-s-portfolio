@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView } from "framer-motion";
-import { MapPin, GraduationCap, Briefcase, Code2, Download, ExternalLink } from "lucide-react";
+import { MapPin, GraduationCap, Briefcase, Code2, Download, ExternalLink, X, Atom, SquareStack, Leaf } from "lucide-react";
 import { personalInfo } from "@/data";
 import Image from "next/image";
 
@@ -96,7 +96,7 @@ export default function AboutSection() {
                 transition={{ duration: 3, repeat: Infinity }}
                 className="absolute -right-8 top-10 glass border border-purple-500/30 rounded-2xl p-3 shadow-lg shadow-purple-500/10"
               >
-                <div className="text-2xl">⚛️</div>
+                <Atom size={24} className="text-purple-300" />
                 <div className="text-xs text-purple-300 font-medium mt-1">React</div>
               </motion.div>
 
@@ -105,7 +105,7 @@ export default function AboutSection() {
                 transition={{ duration: 3.5, repeat: Infinity }}
                 className="absolute -left-8 bottom-20 glass border border-pink-500/30 rounded-2xl p-3 shadow-lg shadow-pink-500/10"
               >
-                <div className="text-2xl">▲</div>
+                <SquareStack size={24} className="text-pink-300" />
                 <div className="text-xs text-pink-300 font-medium mt-1">Next.js</div>
               </motion.div>
 
@@ -114,7 +114,7 @@ export default function AboutSection() {
                 transition={{ duration: 4, repeat: Infinity }}
                 className="absolute -top-4 left-10 glass border border-amber-500/30 rounded-2xl p-3 shadow-lg shadow-amber-500/10"
               >
-                <div className="text-2xl">🔷</div>
+                <Code2 size={24} className="text-amber-300" />
                 <div className="text-xs text-amber-300 font-medium mt-1">TypeScript</div>
               </motion.div>
             </div>
@@ -240,7 +240,7 @@ export default function AboutSection() {
                 }}
                 className="w-8 h-8 flex items-center justify-center rounded-full bg-white/10 text-white/60 hover:text-white"
               >
-                ✕
+                <X size={18} />
               </button>
             </div>
           </div>

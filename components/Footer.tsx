@@ -1,6 +1,6 @@
 "use client";
 import { motion } from "framer-motion";
-import { Github, Linkedin, Mail, Phone, ArrowUp } from "lucide-react";
+import { Github, Linkedin, Mail, Phone, ArrowUp, Heart } from "lucide-react";
 import { personalInfo } from "@/data";
 
 export default function Footer() {
@@ -52,8 +52,8 @@ export default function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-white/5 text-center">
-          <p className="text-white/20 text-sm">
-            © {new Date().getFullYear()} Raneem Bikai. Built with Next.js & ❤️
+          <p className="text-white/20 text-sm flex items-center justify-center gap-1">
+            © {new Date().getFullYear()} Raneem Bikai. Built with Next.js & <Heart size={14} className="text-red-500" />
           </p>
         </div>
       </div>
