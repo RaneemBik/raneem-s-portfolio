@@ -26,6 +26,11 @@ body {
   overflow-x: hidden;
 }
 
+html.light body {
+  background: #f4f7fb;
+  color: #0f172a;
+}
+
 /* Scrollbar */
 ::-webkit-scrollbar { width: 6px; }
 ::-webkit-scrollbar-track { background: #0a0a0f; }
@@ -238,14 +243,32 @@ html.light .bg-dark-2 { background-color: #eef2f7 !important; }
 html.light .bg-dark-3 { background-color: #e5eaf2 !important; }
 html.light .bg-dark\/80 { background-color: rgba(244, 247, 251, 0.9) !important; }
 
-html.light .text-white { color: #0f172a !important; }
-html.light .text-white\/90 { color: #1e293b !important; }
-html.light .text-white\/80 { color: #334155 !important; }
-html.light .text-white\/70 { color: #475569 !important; }
-html.light .text-white\/60 { color: #64748b !important; }
+/* STRONG TEXT COLORS FOR LIGHT MODE - High Contrast */
+html.light .text-white { color: #000000 !important; }
+html.light .text-white\/90 { color: #0f172a !important; }
+html.light .text-white\/80 { color: #1e293b !important; }
+html.light .text-white\/70 { color: #334155 !important; }
+html.light .text-white\/60 { color: #475569 !important; }
 html.light .text-white\/50 { color: #64748b !important; }
-html.light .text-white\/40 { color: #94a3b8 !important; }
-html.light .text-white\/30 { color: #94a3b8 !important; }
+html.light .text-white\/40 { color: #64748b !important; }
+html.light .text-white\/30 { color: #78909e !important; }
+html.light .text-white\/20 { color: #94a3b8 !important; }
+html.light .text-white\/15 { color: #94a3b8 !important; }
+html.light .text-white\/10 { color: #cbd5e1 !important; }
+
+/* Ensure ALL generic text is visible */
+html.light p { color: #0f172a !important; }
+html.light span { color: #0f172a !important; }
+html.light div { color: #0f172a !important; }
+html.light h1 { color: #000000 !important; }
+html.light h2 { color: #000000 !important; }
+html.light h3 { color: #0f172a !important; }
+html.light h4 { color: #0f172a !important; }
+html.light h5 { color: #0f172a !important; }
+html.light h6 { color: #0f172a !important; }
+html.light li { color: #0f172a !important; }
+html.light dt { color: #0f172a !important; }
+html.light dd { color: #0f172a !important; }
 
 html.light .border-white\/5 { border-color: rgba(15, 23, 42, 0.08) !important; }
 html.light .border-white\/8 { border-color: rgba(15, 23, 42, 0.1) !important; }
@@ -278,3 +301,154 @@ html.light .modal-overlay {
 html.light .cursor-glow {
   background: radial-gradient(circle, rgba(168,85,247,0.1) 0%, transparent 70%);
 }
+
+/* ===== COMPREHENSIVE LIGHT MODE - MAXIMUM VISIBILITY ===== */
+
+/* Remove all opacity from text in light mode */
+html.light .text-white\/20 { color: #1e293b !important; }
+html.light .text-white\/25 { color: #334155 !important; }
+html.light .text-white\/35 { color: #475569 !important; }
+html.light .text-white\/45 { color: #64748b !important; }
+
+/* Section backgrounds for light mode */
+html.light section { background: #f4f7fb !important; }
+html.light section.bg-dark { background: #f4f7fb !important; }
+html.light section.bg-dark-2 { background: #eef2f7 !important; }
+html.light section.bg-dark-3 { background: #e5eaf2 !important; }
+
+/* All text elements - MAXIMUM CONTRAST */
+html.light a { color: #0f172a !important; text-decoration: none; }
+html.light a:hover { color: #7c3aed !important; }
+html.light strong { color: #000000 !important; }
+html.light em { color: #0f172a !important; }
+html.light small { color: #1e293b !important; }
+html.light code { color: #0f172a !important; background: rgba(15, 23, 42, 0.06); }
+html.light pre { color: #0f172a !important; }
+html.light blockquote { color: #334155 !important; }
+
+/* Progress/bars */
+html.light .skill-bar { background: rgba(15, 23, 42, 0.15) !important; }
+html.light .skill-bar-fill { background: linear-gradient(90deg, #7c3aed, #db2777) !important; }
+
+/* Placeholder text */
+html.light ::placeholder { color: #94a3b8 !important; opacity: 1 !important; }
+html.light input::placeholder { color: #cbd5e1 !important; }
+html.light textarea::placeholder { color: #cbd5e1 !important; }
+
+/* Light mode gradient text - DARKER VERSION */
+html.light .gradient-text {
+  background: linear-gradient(135deg, #6b21a8, #be185d, #d97706);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+html.light .gradient-text-2 {
+  background: linear-gradient(135deg, #be185d, #6b21a8);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Light mode button and input states */
+html.light input,
+html.light textarea {
+  background-color: rgba(15, 23, 42, 0.05) !important;
+  border-color: rgba(15, 23, 42, 0.12) !important;
+  color: #0f172a !important;
+}
+
+html.light input:focus,
+html.light textarea:focus {
+  border-color: #7c3aed !important;
+  background-color: rgba(15, 23, 42, 0.08) !important;
+}
+
+/* Light mode glow effects */
+html.light .glow-purple {
+  box-shadow: 0 0 30px rgba(124, 58, 237, 0.2) !important;
+}
+
+html.light .glow-pink {
+  box-shadow: 0 0 30px rgba(219, 39, 119, 0.2) !important;
+}
+
+/* Light mode shadow adjustments */
+html.light .shadow-lg {
+  box-shadow: 0 10px 15px -3px rgba(15, 23, 42, 0.1) !important;
+}
+
+/* Ensure good contrast for all text */
+html.light .text-gray-400 { color: #334155 !important; }
+html.light .text-gray-500 { color: #1e293b !important; }
+html.light .text-gray-600 { color: #0f172a !important; }
+html.light .text-gray-700 { color: #0f172a !important; }
+
+/* Timeline and accent elements */
+html.light .timeline-line {
+  background: linear-gradient(to bottom, transparent, #6b21a8, #be185d, transparent) !important;
+}
+
+/* Active navigation */
+html.light .bg-purple-500\/20 { background-color: rgba(124, 58, 237, 0.15) !important; }
+html.light .border-purple-500\/30 { border-color: rgba(124, 58, 237, 0.35) !important; }
+
+/* Light background color definition */
+html.light { --light-bg: #f4f7fb; }
+
+/* Card and container styles in light mode */
+html.light .dark\:bg-light-bg { background: #f4f7fb !important; color: #0f172a !important; }
+html.light .dark\:border-gray-200 { border-color: #e2e8f0 !important; }
+html.light .dark\:text-gray-600 { color: #0f172a !important; }
+html.light .dark\:text-gray-700 { color: #0f172a !important; }
+html.light .dark\:hover\:text-purple-600:hover { color: #7c3aed !important; }
+html.light .dark\:hover\:border-purple-500\/40:hover { border-color: rgba(124, 58, 237, 0.4) !important; }
+
+/* Light mode special text classes - DARK COLORS */
+html.light .text-green-400 { color: #047857 !important; }
+html.light .text-red-500 { color: #991b1b !important; }
+html.light .text-purple-400 { color: #6b21a8 !important; }
+html.light .text-pink-500 { color: #be185d !important; }
+html.light .text-blue-500 { color: #1e40af !important; }
+html.light .text-sky-500 { color: #0369a1 !important; }
+
+/* Light mode hover states */
+html.light .hover\:text-white:hover { color: #0f172a !important; }
+html.light .hover\:bg-white\/5:hover { background-color: rgba(15, 23, 42, 0.08) !important; }
+html.light .hover\:border-purple-500\/40:hover { border-color: rgba(124, 58, 237, 0.4) !important; }
+
+/* Light mode project cards and modals */
+html.light .bg-black { background: #ffffff !important; }
+
+/* Light mode scrollbar */
+html.light ::-webkit-scrollbar-thumb { background: #a855f7 !important; }
+
+/* Light mode font styling */
+html.light .font-bold { color: #000000 !important; }
+html.light .font-semibold { color: #0f172a !important; }
+html.light .font-medium { color: #1e293b !important; }
+html.light .font-normal { color: #334155 !important; }
+
+/* Ensure all label text is visible */
+html.light label { color: #0f172a !important; font-weight: 500; }
+html.light button { color: #0f172a !important; }
+
+/* Light mode text color utility classes - ENSURE MAXIMUM VISIBILITY */
+html.light .text-slate-400 { color: #1e293b !important; }
+html.light .text-slate-500 { color: #0f172a !important; }
+html.light .text-slate-600 { color: #0f172a !important; }
+html.light .text-slate-700 { color: #0f172a !important; }
+html.light .text-slate-800 { color: #000000 !important; }
+
+/* Light mode opacity-based text */
+html.light [style*="color: rgba(255, 255, 255"] { color: #0f172a !important; }
+
+/* Dark text variants for light mode */
+html.light .dark\:text-white { color: #0f172a !important; }
+html.light .dark\:text-gray-300 { color: #1e293b !important; }
+html.light .dark\:text-gray-400 { color: #334155 !important; }
+html.light .dark\:text-gray-500 { color: #475569 !important; }
+
+/* Span and div text override */
+html.light span:not([style*="color"]) { color: inherit; }
+html.light div:not([style*="color"]) { color: inherit; }

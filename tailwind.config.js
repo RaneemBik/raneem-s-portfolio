@@ -15,6 +15,7 @@ module.exports = {
         'dark-2': '#111118',
         'dark-3': '#1a1a24',
         'dark-4': '#22222f',
+        'light-bg': '#f4f7fb',
       },
       fontFamily: {
         sans: ['var(--font-inter)', 'sans-serif'],

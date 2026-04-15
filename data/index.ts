@@ -100,7 +100,7 @@ export const projects = [
       "SparkClean is a professional cleaning service booking platform built with Next.js and Supabase. It features a fully interactive calendar for scheduling cleaning services, a guest contact system, and a robust admin dashboard. The architecture follows SOLID principles with the repository pattern, ensuring clean and maintainable code. API endpoints are validated with Postman, and Nodemailer handles secure admin password setup. The application is deployed via GitHub Actions to Vercel.",
     technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Supabase", "Nodemailer", "Vercel", "Postman"],
     github: "https://github.com/RaneemBik/spark-clean",
-    live: "https://spark-cleaning-services.vercel.app",
+    live: "https://spark-clean-sigma.vercel.app/",
     date: "2026",
     category: "Full Stack",
     images: ["/projects/spark-services.png"],

@@ -21,7 +21,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var t=localStorage.getItem('theme');if(t==='light'){document.documentElement.classList.add('light')}}catch(e){}",
+              "try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.remove('light')}else{document.documentElement.classList.add('light')}}catch(e){}"
           }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,7 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased bg-dark text-white overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <body className="antialiased bg-dark text-white dark:bg-light-bg dark:text-gray-900 overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
         {children}
         <Toaster
           position="bottom-right"

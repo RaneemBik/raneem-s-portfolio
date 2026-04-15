@@ -8,7 +8,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
-  const [theme, setTheme] = useState<"dark" | "light">("dark");
+  const [theme, setTheme] = useState<"dark" | "light">("light");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -29,7 +29,7 @@ export default function Navbar() {
 
   useEffect(() => {
     const saved = localStorage.getItem("theme");
-    const nextTheme = saved === "light" ? "light" : "dark";
+    const nextTheme = saved === "dark" ? "dark" : "light";
     setTheme(nextTheme);
     document.documentElement.classList.toggle("light", nextTheme === "light");
   }, []);
