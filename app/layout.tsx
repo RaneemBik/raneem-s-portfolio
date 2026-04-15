@@ -16,12 +16,12 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth light">
       <head>
         <script
           dangerouslySetInnerHTML={{
             __html:
-              "try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.remove('light')}else{document.documentElement.classList.add('light')}}catch(e){}"
+              "try{var t=localStorage.getItem('theme');if(t==='dark'){document.documentElement.classList.remove('light')}}catch(e){}"
           }}
         />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,14 +31,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body className="antialiased bg-dark text-white dark:bg-light-bg dark:text-gray-900 overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
+      <body className="antialiased bg-light-bg text-gray-900 dark:bg-dark dark:text-white overflow-x-hidden" style={{ fontFamily: "'Inter', system-ui, sans-serif" }}>
         {children}
         <Toaster
           position="bottom-right"
           toastOptions={{
             style: {
-              background: "#1a1a24",
-              color: "#fff",
+              background: "#f4f7fb",
+              color: "#0f172a",
               border: "1px solid rgba(168,85,247,0.3)",
             },
           }}
